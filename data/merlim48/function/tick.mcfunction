@@ -1,1 +1,21 @@
-say tick!
+# check_and_teleport.mcfunction
+# Check for a diamond block in front of the marker and teleport the marker on top of it if found
+
+# Adjust the block type and coordinates as needed
+
+# Check each direction and teleport if block is found
+execute as @e[type=minecraft:marker] at @s if block ~1 ~ ~ computercraft:turtle_normal run tp @s ~1 ~1 ~
+execute as @e[type=minecraft:marker] at @s if block ~-1 ~ ~ computercraft:turtle_normal run tp @s ~-1 ~1 ~
+execute as @e[type=minecraft:marker] at @s if block ~ ~ ~1 computercraft:turtle_normal run tp @s ~ ~1 ~1
+execute as @e[type=minecraft:marker] at @s if block ~ ~ ~-1 computercraft:turtle_normal run tp @s ~ ~1 ~-1
+execute as @e[type=minecraft:marker] at @s if block ~ ~-1 ~ computercraft:turtle_normal run tp @s ~ ~-1 ~
+
+# Forceload the chunk at the marker's position and immediately remove it
+
+execute as @s at @s run forceload remove all
+
+# Add forceload at the marker's position
+execute as @e[type=minecraft:marker] at @s run forceload add ~ ~
+
+# Show where the marker is
+execute as @e[type=minecraft:marker] at @s run particle minecraft:happy_villager ~ ~ ~ 0.5 0.5 0.5 0 10 force
