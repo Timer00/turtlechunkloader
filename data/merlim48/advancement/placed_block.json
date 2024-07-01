@@ -1,0 +1,18 @@
+{
+  "criteria": {
+    "example": {
+      "trigger": "minecraft:placed_block",
+      "conditions": {
+        "block": "minecraft:diamond_block",
+        "item": {
+          "items": [
+            "minecraft:diamond_block"
+          ]
+        }
+      }
+    }
+  },
+  "rewards": {
+    "function": "merlim48:on_place_turtle"
+  }
+}

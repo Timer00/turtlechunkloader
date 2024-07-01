@@ -10,12 +10,12 @@ execute as @e[type=minecraft:marker] at @s if block ~ ~ ~1 computercraft:turtle_
 execute as @e[type=minecraft:marker] at @s if block ~ ~ ~-1 computercraft:turtle_normal run tp @s ~ ~1 ~-1
 execute as @e[type=minecraft:marker] at @s if block ~ ~-1 ~ computercraft:turtle_normal run tp @s ~ ~-1 ~
 
-# Forceload the chunk at the marker's position and immediately remove it
 
+# Remove all forceloads to prevent maintaining them
 execute as @s at @s run forceload remove all
 
 # Add forceload at the marker's position
 execute as @e[type=minecraft:marker] at @s run forceload add ~ ~
 
 # Show where the marker is
-execute as @e[type=minecraft:marker] at @s run particle minecraft:happy_villager ~ ~ ~ 0.5 0.5 0.5 0 10 force
+execute as @e[type=minecraft:marker] at @s run particle minecraft:happy_villager ~ ~ ~ 0.3 0.3 0.3 0 3 force
