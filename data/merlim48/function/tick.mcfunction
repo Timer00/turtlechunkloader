@@ -10,6 +10,10 @@ execute as @e[type=minecraft:marker,tag=turtle] at @s if block ~ ~ ~1 computercr
 execute as @e[type=minecraft:marker,tag=turtle] at @s if block ~ ~ ~-1 computercraft:turtle_normal run function merlim48:check_direction/computer_id_north
 execute as @e[type=minecraft:marker,tag=turtle] at @s if block ~ ~-1 ~ computercraft:turtle_normal run function merlim48:check_direction/computer_id_down
 
+# -> Need to keep an eye on this as it could cause markers to be wrongly removed.
+# If no turtle is found under the marker, remove it (cleans up when a turtle is mined)
+execute as @e[type=minecraft:marker,tag=turtle] at @s unless block ~ ~ ~ computercraft:turtle_normal run kill @s
+
 # Remove all forceloads to prevent maintaining them
 execute as @s at @s run forceload remove all
 
