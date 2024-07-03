@@ -20,5 +20,5 @@ execute as @s at @s run forceload remove all
 # Add forceloads at all turtle markers
 execute as @e[type=minecraft:marker,tag=turtle] at @s run forceload add ~ ~
 
-# Maker turtle markers visible
-execute as @e[type=minecraft:marker,tag=turtle] at @s run particle minecraft:happy_villager ~ ~ ~ 0.2 0.2 0.2 0 2 force
+# Make turtle markers visible
+execute as @e[type=minecraft:marker,tag=turtle] at @s run particle minecraft:enchant ~ ~0.1 ~ 0 0 0 0.5 3 normal
