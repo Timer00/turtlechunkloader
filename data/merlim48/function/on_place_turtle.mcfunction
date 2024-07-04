@@ -1,5 +1,3 @@
-say On Place Turtle
-
 # Run raycast to find the turtle block and execute a command
 execute run function merlim48:raycast/start
 
