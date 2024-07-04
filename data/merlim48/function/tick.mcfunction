@@ -4,6 +4,8 @@ execute as @e[type=minecraft:marker,tag=turtle] at @s if block ~-1 ~ ~ #computer
 execute as @e[type=minecraft:marker,tag=turtle] at @s if block ~ ~ ~1 #computercraft:turtle run function merlim48:check_direction/computer_id_south
 execute as @e[type=minecraft:marker,tag=turtle] at @s if block ~ ~ ~-1 #computercraft:turtle run function merlim48:check_direction/computer_id_north
 execute as @e[type=minecraft:marker,tag=turtle] at @s if block ~ ~-1 ~ #computercraft:turtle run function merlim48:check_direction/computer_id_down
+execute as @e[type=minecraft:marker,tag=turtle] at @s if block ~ ~1 ~ #computercraft:turtle run function merlim48:check_direction/computer_id_up
+
 
 # -> Need to keep an eye on this as it could cause markers to be wrongly removed.
 # If no turtle is found under the marker, remove it (cleans up when a turtle is mined)
